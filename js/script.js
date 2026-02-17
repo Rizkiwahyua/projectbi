@@ -37,11 +37,11 @@ const questions = [
 ];
 
 let countdown;
-let time = 5;
+let time = 7;
 
 function loadQuestion() {
   clearInterval(countdown);
-  time = 5;
+  time = 7;
   document.getElementById("timeLeft").innerText = time;
 
   const randomIndex = Math.floor(Math.random() * questions.length);
@@ -97,6 +97,5 @@ function showTimeUp() {
   icon.innerHTML = `<div class="error-icon">⏰</div>`;
   text.innerText = "Waktu Habis!";
 }
-
 
 loadQuestion();

@@ -106,12 +106,20 @@ function checkAnswer(selected, correct) {
   popup.style.display = "flex";
 
   if (selected === correct) {
-    icon.innerHTML = "✅";
-    text.innerText = "Jawaban Benar!";
-  } else {
-    icon.innerHTML = "❌";
-    text.innerText = "Jawaban Salah!";
-  }
+  icon.innerHTML = `
+    <div class="success-icon">
+      ✓
+    </div>
+  `;
+  text.innerText = "Jawaban Benar!";
+} else {
+  icon.innerHTML = `
+    <div class="error-icon">
+      ✕
+    </div>
+  `;
+  text.innerText = "Jawaban Salah!";
+}
 }
 
 function nextQuestion() {

@@ -5,19 +5,14 @@ const questions = [
       "Cinta Bangga Paham",
       "Cerdas Bangga Pintar",
       "Cinta Bangga Pakai",
-      "Cerdas Bangga Pakai"
+      "Cerdas Bangga Pakai",
     ],
-    answer: 0
+    answer: 0,
   },
   {
     question: "Siapa yang berwenang mencetak Rupiah?",
-    options: [
-      "Kementerian Keuangan",
-      "Bank Indonesia",
-      "OJK",
-      "BPK"
-    ],
-    answer: 1
+    options: ["Kementerian Keuangan", "Bank Indonesia", "OJK", "BPK"],
+    answer: 1,
   },
   {
     question: "Apa tujuan gerakan CBP Rupiah?",
@@ -25,9 +20,9 @@ const questions = [
       "Mengganti Rupiah",
       "Menumbuhkan nasionalisme terhadap Rupiah",
       "Menaikkan pajak",
-      "Menghapus uang tunai"
+      "Menghapus uang tunai",
     ],
-    answer: 1
+    answer: 1,
   },
   {
     question: "Apa kepanjangan CBP?",
@@ -35,19 +30,14 @@ const questions = [
       "Cinta Bangga Paham",
       "Cerdas Bangga Pintar",
       "Cinta Bangga Pakai",
-      "Cerdas Bangga Pakai"
+      "Cerdas Bangga Pakai",
     ],
-    answer: 0
+    answer: 0,
   },
   {
     question: "Siapa yang berwenang mencetak Rupiah?",
-    options: [
-      "Kementerian Keuangan",
-      "Bank Indonesia",
-      "OJK",
-      "BPK"
-    ],
-    answer: 1
+    options: ["Kementerian Keuangan", "Bank Indonesia", "OJK", "BPK"],
+    answer: 1,
   },
   {
     question: "Apa tujuan gerakan CBP Rupiah?",
@@ -55,30 +45,20 @@ const questions = [
       "Mengganti Rupiah",
       "Menumbuhkan nasionalisme terhadap Rupiah",
       "Menaikkan pajak",
-      "Menghapus uang tunai"
+      "Menghapus uang tunai",
     ],
-    answer: 1
+    answer: 1,
   },
   {
     question: "Rupiah merupakan alat pembayaran yang sah di?",
-    options: [
-      "Asia Tenggara",
-      "Indonesia",
-      "ASEAN",
-      "Dunia"
-    ],
-    answer: 1
+    options: ["Asia Tenggara", "Indonesia", "ASEAN", "Dunia"],
+    answer: 1,
   },
   {
     question: "Siapa Gubernur Bank Indonesia saat ini?",
-    options: [
-      "Sri Mulyani",
-      "Perry Warjiyo",
-      "Mahfud MD",
-      "Erick Thohir"
-    ],
-    answer: 1
-  }
+    options: ["Sri Mulyani", "Perry Warjiyo", "Mahfud MD", "Erick Thohir"],
+    answer: 1,
+  },
 ];
 
 function loadQuestion() {
@@ -106,20 +86,20 @@ function checkAnswer(selected, correct) {
   popup.style.display = "flex";
 
   if (selected === correct) {
-  icon.innerHTML = `
+    icon.innerHTML = `
     <div class="success-icon">
       ✓
     </div>
   `;
-  text.innerText = "Jawaban Benar!";
-} else {
-  icon.innerHTML = `
+    text.innerText = "Jawaban Benar!";
+  } else {
+    icon.innerHTML = `
     <div class="error-icon">
       ✕
     </div>
   `;
-  text.innerText = "Jawaban Salah!";
-}
+    text.innerText = "Jawaban Salah!";
+  }
 }
 
 function nextQuestion() {

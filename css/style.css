@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif; 
-  background: linear-gradient(135deg, #074dbd, #90d3ff);
+  background: linear-gradient(135deg, #dfe9ff, #0099ff);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,7 +116,7 @@ body {
 }
 
 .logo {
-  height: 60px;
+  height: 55px;
   object-fit: contain;
 }
 

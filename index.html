@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz CBP Rupiah</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #b71c1c, #e53935);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 15px;
+      }
+
+      .container {
+        background: white;
+        width: 100%;
+        max-width: 420px;
+        padding: 25px 20px;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        text-align: center;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      h1 {
+        font-size: 20px;
+        color: #b71c1c;
+        margin-bottom: 5px;
+      }
+
+      .subtitle {
+        font-size: 13px;
+        color: gray;
+        margin-bottom: 20px;
+      }
+
+      #question {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        line-height: 1.4;
+      }
+
+      button {
+        width: 100%;
+        padding: 14px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 12px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.2s;
+        background-color: #f5f5f5;
+      }
+
+      button:active {
+        transform: scale(0.97);
+      }
+
+      .correct {
+        background-color: #c8e6c9 !important;
+      }
+
+      .wrong {
+        background-color: #ffcdd2 !important;
+      }
+
+      #result {
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Extra kecil banget */
+      @media (max-width: 350px) {
+        h1 {
+          font-size: 18px;
+        }
+        #question {
+          font-size: 14px;
+        }
+        button {
+          font-size: 13px;
+          padding: 12px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Quiz CBP Rupiah</h1>
+      <div class="subtitle">Cinta • Bangga • Paham Rupiah 🇮🇩</div>
+
+      <div id="question">Loading...</div>
+      <div id="options"></div>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          question: "Apa kepanjangan CBP?",
+          options: [
+            "Cinta Bangga Paham",
+            "Cerdas Bangga Pintar",
+            "Cinta Bangga Pakai",
+            "Cerdas Bangga Pakai",
+          ],
+          answer: 0,
+        },
+        {
+          question: "Siapa yang berwenang mencetak Rupiah?",
+          options: ["Kementerian Keuangan", "Bank Indonesia", "OJK", "BPK"],
+          answer: 1,
+        },
+        {
+          question: "Apa tujuan gerakan CBP Rupiah?",
+          options: [
+            "Mengganti Rupiah",
+            "Menumbuhkan nasionalisme terhadap Rupiah",
+            "Menaikkan pajak",
+            "Menghapus uang tunai",
+          ],
+          answer: 1,
+        },
+      ];
+
+      const randomIndex = Math.floor(Math.random() * questions.length);
+      const q = questions[randomIndex];
+
+      document.getElementById("question").innerText = q.question;
+
+      const optionsDiv = document.getElementById("options");
+
+      q.options.forEach((opt, index) => {
+        const btn = document.createElement("button");
+        btn.innerText = opt;
+        btn.onclick = () => {
+          const buttons = document.querySelectorAll("button");
+          buttons.forEach((b) => (b.disabled = true));
+
+          if (index === q.answer) {
+            btn.classList.add("correct");
+            document.getElementById("result").innerText = "✅ Jawaban Benar!";
+          } else {
+            btn.classList.add("wrong");
+            document.getElementById("result").innerText = "❌ Jawaban Salah!";
+          }
+        };
+        optionsDiv.appendChild(btn);
+      });
+    </script>
+  </body>
+</html>

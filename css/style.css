@@ -96,7 +96,7 @@ h1 {
   padding: 10px 15px;
   border-radius: 10px;
   border: none;
-  background: #e53935;
+  background: #005ba5;
   color: white;
   cursor: pointer;
 }
@@ -124,6 +124,13 @@ body {
   .logo {
     height: 55px;
   }
+}
+
+.timer {
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  opacity: 0.9;
 }
 
 

@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif; 
-  background: linear-gradient(135deg, #c8ddff, #90d3ff);
+  background: linear-gradient(135deg, #074dbd, #90d3ff);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,6 +100,26 @@ h1 {
   color: white;
   cursor: pointer;
 }
+
+body {
+  position: relative;
+}
+
+.logo-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px;
+}
+
+.logo {
+  height: 60px;
+  object-fit: contain;
+}
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(15px); }

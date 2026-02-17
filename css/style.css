@@ -120,6 +120,12 @@ body {
   object-fit: contain;
 }
 
+@media (max-width: 480px) {
+  .logo {
+    height: 55px;
+  }
+}
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(15px); }

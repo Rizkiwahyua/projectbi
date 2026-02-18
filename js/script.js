@@ -34,6 +34,87 @@ const questions = [
     options: ["Sri Mulyani", "Perry Warjiyo", "Mahfud MD", "Erick Thohir"],
     answer: 1,
   },
+  {
+    question: "Apa peran utama Bank Indonesia?",
+    options: [
+      "Mengatur anggaran negara",
+      "Menjaga kestabilan nilai Rupiah",
+      "Menentukan pajak masyarakat",
+      "Mengelola bantuan sosial"
+    ],
+    correct: 1
+  },
+  {
+    question: "CBP Rupiah merupakan singkatan dari…",
+    options: [
+      "Cerdas, Bijak, Produktif",
+      "Cinta, Bangga, dan Paham Rupiah",
+      "Cermat, Belanja, Pakai Rupiah",
+      "Cukup, Bijak, Punya Rupiah"
+    ],
+    correct: 1
+  },
+  {
+    question: "Manakah perilaku yang mencerminkan Cinta Rupiah?",
+    options: [
+      "Melipat uang sampai lecek",
+      "Mencoret uang kertas",
+      "Menyimpan uang dengan rapi",
+      "Meremas uang di saku"
+    ],
+    correct: 2
+  },
+  {
+    question: "Menggunakan Rupiah sebagai alat pembayaran di Indonesia menunjukkan sikap…",
+    options: [
+      "Terpaksa karena aturan",
+      "Ikut tren",
+      "Bangga terhadap simbol kedaulatan negara",
+      "Tidak punya pilihan"
+    ],
+    correct: 2
+  },
+  {
+    question: "Manakah yang termasuk ciri keaslian uang Rupiah?",
+    options: [
+      "Warna mudah pudar",
+      "Kertas sangat tipis",
+      "Ada unsur pengaman (watermark/benang)",
+      "Mudah sobek"
+    ],
+    correct: 2
+  },
+  {
+    question: "Lembaga yang berwenang mengedarkan uang Rupiah adalah…",
+    options: [
+      "Kementerian Keuangan",
+      "Bank Indonesia",
+      "Bank umum",
+      "Otoritas Jasa Keuangan"
+    ],
+    correct: 1
+  },
+  {
+    question: "Tujuan utama program CBP Rupiah adalah…",
+    options: [
+      "Menggantikan mata uang nasional",
+      "Meningkatkan kebanggaan dan pemahaman masyarakat terhadap Rupiah",
+      "Membatasi penggunaan uang tunai",
+      "Mengurangi peredaran uang"
+    ],
+    correct: 1
+  },
+  {
+    question: "Manakah yang TIDAK mencerminkan CBP Rupiah?",
+    options: [
+      "Menggunakan Rupiah dalam transaksi",
+      "Menyimpan uang dengan rapi",
+      "Merusak uang kertas",
+      "Mengenali ciri uang asli"
+    ],
+    correct: 2
+  }
+
 ];
 
 let countdown;

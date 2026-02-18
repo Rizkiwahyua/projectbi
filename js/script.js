@@ -39,6 +39,10 @@ const questions = [
 let countdown;
 let time = 7;
 
+const soundCorrect = new Audio("assets/audio/correct.mp3");
+const soundWrong = new Audio("assets/audio/wrong.mp3");
+const soundTimeUp = new Audio("assets/audio/timeout.mp3");
+
 function loadQuestion() {
   clearInterval(countdown);
   time = 7;
@@ -80,9 +84,11 @@ function checkAnswer(selected, correct) {
   popup.style.display = "flex";
 
   if (selected === correct) {
+    soundCorrect.play();
     icon.innerHTML = `<div class="success-icon">✓</div>`;
     text.innerText = "Jawaban Benar!";
   } else {
+    soundWrong.play();
     icon.innerHTML = `<div class="error-icon">✕</div>`;
     text.innerText = "Jawaban Salah!";
   }
@@ -92,6 +98,8 @@ function showTimeUp() {
   const popup = document.getElementById("popup");
   const icon = document.getElementById("popupIcon");
   const text = document.getElementById("popupText");
+
+  soundTimeUp.play();
 
   popup.style.display = "flex";
   icon.innerHTML = `<div class="error-icon">⏰</div>`;

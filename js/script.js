@@ -124,6 +124,29 @@ const soundCorrect = new Audio("assets/audio/correct.mp3");
 const soundWrong = new Audio("assets/audio/wrong.mp3");
 const soundTimeUp = new Audio("assets/audio/timeout.mp3");
 
+function startCountdown() {
+  const overlay = document.getElementById("countdownOverlay");
+  const numberEl = document.getElementById("countdownNumber");
+
+  let count = 3;
+  numberEl.innerText = count;
+
+  const interval = setInterval(() => {
+    count--;
+
+    if (count > 0) {
+      numberEl.innerText = count;
+      numberEl.style.animation = "none";
+      void numberEl.offsetWidth; // restart animation
+      numberEl.style.animation = "zoom 0.8s ease";
+    } else {
+      clearInterval(interval);
+      overlay.style.display = "none";
+      loadQuestion(); // mulai soal setelah countdown
+    }
+  }, 1000);
+}
+
 function loadQuestion() {
   clearInterval(countdown);
   time = 7;
@@ -187,4 +210,4 @@ function showTimeUp() {
   text.innerText = "Waktu Habis!";
 }
 
-loadQuestion();
+startCountdown();

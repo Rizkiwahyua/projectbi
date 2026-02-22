@@ -1,29 +1,41 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
   font-family: 'Inter', sans-serif;
+}
+
+/* BODY */
+body {
   background: linear-gradient(135deg, #ffffff, #1f7cff);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100dvh; /* lebih stabil di mobile */
   padding: 20px;
   position: relative;
 }
 
+/* BACKGROUND BAWAH (AMAN MOBILE) */
 body::after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 180px; /* tinggi area gambar */
+  left: 0;
+  width: 100vw; /* pakai viewport width */
+  height: 180px;
   background: url('../assets/img/animation.png') no-repeat center bottom;
-  background-size: contain;
+  background-size: cover; /* lebih aman dari contain */
   pointer-events: none;
+  z-index: 0;
 }
+
+/* CARD */
 .card {
   width: 100%;
   max-width: 420px;
@@ -36,16 +48,27 @@ body::after {
   color: white;
   text-align: center;
   animation: fadeIn 0.6s ease;
+  z-index: 1; /* supaya di atas background */
 }
-.bottom-decor {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+
+/* LOGO */
+.logo-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 0;
   width: 100%;
-  max-width: 600px;
-  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px;
+  z-index: 2;
 }
+
+.logo {
+  height: 55px;
+  object-fit: contain;
+}
+
+/* TEXT */
 h1 {
   margin: 0;
   font-size: 22px;
@@ -65,6 +88,7 @@ h1 {
   line-height: 1.5;
 }
 
+/* BUTTON */
 .option-btn {
   width: 100%;
   padding: 14px;
@@ -84,6 +108,7 @@ h1 {
   transform: translateY(-2px);
 }
 
+/* POPUP */
 .popup {
   position: fixed;
   inset: 0;
@@ -91,6 +116,7 @@ h1 {
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 9999; /* TAMBAH INI */
 }
 
 .popup-box {
@@ -108,10 +134,6 @@ h1 {
   font-size: 60px;
 }
 
-.popup-box h2 {
-  margin: 10px 0;
-}
-
 .popup-box button {
   margin-top: 15px;
   padding: 10px 15px;
@@ -122,28 +144,7 @@ h1 {
   cursor: pointer;
 }
 
-
-.logo-wrapper {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 25px;
-}
-
-.logo {
-  height: 55px;
-  object-fit: contain;
-}
-
-@media (max-width: 480px) {
-  .logo {
-    height: 55px;
-  }
-}
-
+/* TIMER */
 .timer {
   font-size: 14px;
   margin-bottom: 15px;
@@ -151,6 +152,7 @@ h1 {
   opacity: 0.9;
 }
 
+/* COUNTDOWN OVERLAY */
 .countdown-overlay {
   position: fixed;
   inset: 0;
@@ -169,6 +171,7 @@ h1 {
   animation: zoom 0.8s ease;
 }
 
+/* ANIMATIONS */
 @keyframes zoom {
   from { transform: scale(0.5); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
@@ -184,8 +187,13 @@ h1 {
   to { transform: scale(1); opacity: 1; }
 }
 
+/* MOBILE ADJUST */
 @media (max-width: 480px) {
   body::after {
-    height: 150px;
+    height: 140px;
+  }
+
+  .logo {
+    height: 45px;
   }
 }

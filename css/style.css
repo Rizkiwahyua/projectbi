@@ -8,6 +8,8 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* BODY */
@@ -27,10 +29,10 @@ body::after {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100vw; /* pakai viewport width */
-  height: 180px;
+  right: 0;        /* pakai right bukan width */
+  height: 150px;
   background: url('../assets/img/animation.png') no-repeat center bottom;
-  background-size: cover; /* lebih aman dari contain */
+  background-size: 100% auto;  /* jangan cover */
   pointer-events: none;
   z-index: 0;
 }
@@ -196,4 +198,8 @@ h1 {
   .logo {
     height: 45px;
   }
+}
+
+* {
+  outline: 1px solid red;
 }

@@ -118,7 +118,7 @@ const questions = [
 ];
 
 let countdown;
-let time = 7;
+let time = 10;
 
 const soundCorrect = new Audio("assets/audio/correct.mp3");
 const soundWrong = new Audio("assets/audio/wrong.mp3");
@@ -149,7 +149,7 @@ function startCountdown() {
 
 function loadQuestion() {
   clearInterval(countdown);
-  time = 7;
+  time = 10;
   document.getElementById("timeLeft").innerText = time;
 
   const randomIndex = Math.floor(Math.random() * questions.length);
